@@ -1,0 +1,10 @@
+{
+  "DB" : {
+    "HOST" : "",
+    "PASSWORD" : ""
+  },
+  "SERVER" : {
+    "HOST" : "localhost",
+    "PORT" : "8081"
+  }
+}
