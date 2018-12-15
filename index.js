@@ -41,5 +41,5 @@ app.use((req, res, next)=>{
 app.use(errorHandler)
 
 app.listen(configs.server.port, ()=>{
-  console.log(`Server is listening on http://localhost:${configs.server.port}`)
+  console.log(`Server is listening on ${configs.server.port}`)
 })

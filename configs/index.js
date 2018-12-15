@@ -9,9 +9,8 @@ if (configs.nodeEnv === "dev") {
 
 configs.dbUrl = process.env.DB_URL || dev.DB_URL,
 configs.server = {
-  port : process.env.PORT || dev.SERVER.PORT,
-  host : process.env.IP || dev.SERVER.HOST
+  port : process.env.PORT || dev.SERVER.PORT
 }
-configs.secretKey = "secretkeyphrase"
+configs.secretKey = process.env.SECRET_KEY || "secretkeyphrase"
 
 module.exports = configs
