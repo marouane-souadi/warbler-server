@@ -8,7 +8,6 @@ const authRoutes = require('./routes/auth')
 const messageRoutes = require('./routes/message')
 const errorHandler = require('./handlers/error')
 const {loginRequired} = require("./middleware/auth")
-require('dotenv').config()
 
 app.use(cors())
 app.use(bodyParser.json())

@@ -1,5 +1,6 @@
 const db = require('../models/mongodb')
 const jwt = require('jsonwebtoken')
+const configs = require("../configs")
 
 exports.signin = async (req, res, next)=>{
   try {
@@ -11,7 +12,7 @@ exports.signin = async (req, res, next)=>{
         id, 
         username, 
         profileImageUrl
-      }, process.env.SECRET_KEY)
+      }, configs.secretKey)
       res.status(200).json({
         id,
         username,
@@ -40,7 +41,7 @@ exports.signup = async (req, res, next)=>{
       id, 
       username, 
       profileImageUrl
-    }, process.env.SECRET_KEY)
+    }, configs.secretKey)
     res.status(200).json({
       id,
       username,

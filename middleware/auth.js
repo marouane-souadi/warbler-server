@@ -1,9 +1,10 @@
 const jwt = require('jsonwebtoken')
+const configs = require('../configs')
 
 exports.loginRequired = (req, res, next)=>{
   try {
     const token = req.headers.authorization.split(' ')[1]
-    jwt.verify(token, process.env.SECRET_KEY, (err, decoded)=>{
+    jwt.verify(token, configs.secretKey, (err, decoded)=>{
       if (decoded) {
         next()
       } else {
@@ -24,7 +25,7 @@ exports.loginRequired = (req, res, next)=>{
 exports.ensureCorrectUser = (req, res, next)=>{
   try {
     const token = req.headers.authorization.split(' ')[1]
-    jwt.verify(token, process.env.SECRET_KEY, (err, decoded)=>{
+    jwt.verify(token, configs.secretKey, (err, decoded)=>{
       if (decoded &&(decoded.id===req.params.id)) {
         console.log(decoded)
         next()

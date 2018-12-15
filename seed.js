@@ -15,7 +15,7 @@ const addMessages = async (user, count)=>{
     return addMessages(user, count-1)
   }
 }
-const createFakeUser = (count)=>{
+const createFakeUser = async (count)=>{
   if (count > 0) {
     fetch('https://randomuser.me/api/').then(res=>res.json())
       .then(d=>{
@@ -27,7 +27,7 @@ const createFakeUser = (count)=>{
             email : data.email,
             password : 'password',
             profileImageUrl : data.picture.large
-          }).then(user=>{
+          }).then(async user=> {
             await addMessages(user, 4)
             await user.save()
           })

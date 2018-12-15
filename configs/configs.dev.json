@@ -1,8 +1,5 @@
 {
-  "DB" : {
-    "HOST" : "",
-    "PASSWORD" : ""
-  },
+  "DB_URL" : "mongodb://localhost/warbler2",
   "SERVER" : {
     "HOST" : "localhost",
     "PORT" : "8081"
